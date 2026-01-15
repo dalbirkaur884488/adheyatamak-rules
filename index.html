@@ -129,9 +129,9 @@ header h1:last-child {
   margin: 12px 0;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   gap: 10px;
 }
+
 
 /* Wider screens → horizontal */
 @media (min-width: 480px) {
@@ -252,6 +252,31 @@ header h1:last-child {
   }
 }
 
+.date-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Mobile: stack buttons */
+@media (max-width: 480px) {
+  .action-row {
+    flex-direction: column;
+  }
+}
+
+/* Desktop: buttons inline */
+@media (min-width: 481px) {
+  .action-row {
+    justify-content: center;
+  }
+}
 
 
 .simran-block,
@@ -398,12 +423,20 @@ footer .main {
 
 <!-- DATE ROW -->
 <div id="dateNav">
+
+  <div class="date-row">
     <div id="prevDay" class="navButton">&#8592;</div>
     <div id="dateDisplay"></div>
     <div id="nextDay" class="navButton">&#8594;</div>
+  </div>
+
+  <div class="action-row">
     <button id="todayBtn"></button>
     <button id="toggleMonth"></button>
   </div>
+
+</div>
+
 
   <div id="checklist"></div>
 
